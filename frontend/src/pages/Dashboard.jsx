@@ -23,7 +23,7 @@ export default function Dashboard() {
   const [targetDomain, setTargetDomain] = useState(DEFAULT_DOMAIN);
   const [vibeStyle, setVibeStyle] = useState(DEFAULT_VIBE);
   const [mode, setMode] = useState("standard");
-  const [lightTheme, setLightTheme] = useState(false);
+  const [lightTheme, setLightTheme] = useState(true);
   const [loading, setLoading] = useState(false);
   const [analogy, setAnalogy] = useState(null);
   const [history, setHistory] = useState([]);

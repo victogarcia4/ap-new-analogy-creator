@@ -171,18 +171,24 @@ export default function InputPanel({
         <p className="text-xs text-slate-500 mt-3 text-center">
           OpenRouter · {mode === "light" ? "economical Light mode" : "structured lecture assets"}
         </p>
-        <p className="text-[11px] text-slate-600 mt-2 text-center">
-          Built by Dr. Victor Garcia M @{" "}
-          <a
-            href="https://48hours.live"
-            target="_blank"
-            rel="noreferrer"
-            className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
-          >
-            48hours.live
-          </a>
-          {lightTheme ? " · Light theme enabled" : ""}
-        </p>
+        <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-slate-600">
+          <img
+            src="/dr-victor-garcia.png"
+            alt="Dr. Victor Garcia M"
+            className="h-8 w-8 rounded-full border border-emerald-500/40 object-cover"
+          />
+          <span>
+            Built by Dr. Victor Garcia M @{" "}
+            <a
+              href="https://48hours.live"
+              target="_blank"
+              rel="noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+            >
+              48hours.live
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );
