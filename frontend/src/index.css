@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-mono-data {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 6px;
+    border: 2px solid #0f172a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Selection */
+::selection {
+    background: #10b981;
+    color: #0f172a;
+}
+
+@layer base {
+    :root {
+        --background: 222 47% 11%;
+        --foreground: 210 40% 98%;
+        --card: 217 33% 17%;
+        --card-foreground: 210 40% 98%;
+        --popover: 217 33% 17%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 160 84% 39%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 217 33% 17%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217 33% 17%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 160 84% 39%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 215 27% 27%;
+        --input: 215 27% 27%;
+        --ring: 160 84% 39%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Staggered fade-up entrance */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.9); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+    100% { transform: scale(0.9); opacity: 0.9; }
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 1.8s ease-in-out infinite;
+}
+
+.theme-light {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+.theme-light .bg-slate-950,
+.theme-light .bg-slate-950\/60,
+.theme-light .bg-slate-950\/85 {
+    background-color: #f8fafc !important;
+}
+
+.theme-light .bg-slate-900,
+.theme-light .bg-slate-900\/60,
+.theme-light .bg-slate-900\/70,
+.theme-light .bg-slate-900\/80,
+.theme-light .bg-slate-900\/50 {
+    background-color: #ffffff !important;
+}
+
+.theme-light .bg-slate-800,
+.theme-light .bg-slate-800\/70 {
+    background-color: #e2e8f0 !important;
+}
+
+.theme-light .text-slate-50,
+.theme-light .text-slate-100,
+.theme-light .text-slate-200 {
+    color: #0f172a !important;
+}
+
+.theme-light .text-slate-300,
+.theme-light .text-slate-400 {
+    color: #475569 !important;
+}
+
+.theme-light .text-slate-500,
+.theme-light .text-slate-600 {
+    color: #64748b !important;
+}
+
+.theme-light .border-slate-800,
+.theme-light .border-slate-800\/70,
+.theme-light .border-slate-700 {
+    border-color: #cbd5e1 !important;
+}
+
+@media print {
+    body {
+        background: #fff !important;
+        color: #111827 !important;
+    }
+
+    aside,
+    [data-testid="preview-toolbar"],
+    [data-testid="canvas-loading"] {
+        display: none !important;
+    }
+
+    main,
+    [data-testid="canvas-content"] {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #fff !important;
+    }
+
+    [data-testid="rendered-analogy"] * {
+        color: #111827 !important;
+        border-color: #d1d5db !important;
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    [data-testid="narrative-card"],
+    [data-testid="blueprint-table"],
+    [data-testid^="mapping-row-"],
+    [data-testid^="clicker-card-"] {
+        break-inside: avoid;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin: inherit;
+        padding: inherit;
+        gap: inherit;
+        border-width: inherit;
+        border-style: inherit;
+        border-color: inherit;
+    }
+}

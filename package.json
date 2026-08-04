@@ -1,0 +1,11 @@
+{
+  "name": "ap-new-analogy-creator",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend install --no-audit --no-fund && npm --prefix frontend run build",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
